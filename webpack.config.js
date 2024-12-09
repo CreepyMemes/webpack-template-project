@@ -1,4 +1,5 @@
 const path = require('path');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // To automatically include css files
 const CopyWebpackPlugin = require('copy-webpack-plugin'); // To automatically copy assets directory
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // To automatically include main script
@@ -29,6 +30,12 @@ module.exports = {
         ],
     },
     plugins: [
+        new ESLintPlugin({
+            // Optional: Specify your ESLint configuration file or other options
+            extensions: ['js'], // Specify file extensions to lint
+            overrideConfigFile: path.resolve(__dirname, 'eslint.config.js'), // Explicitly specify the ESLint config file
+        }),
+
         new MiniCssExtractPlugin({
             filename: 'css/[name].css', // Output CSS file per entry
         }),
