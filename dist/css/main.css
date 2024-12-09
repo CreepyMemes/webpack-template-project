@@ -1,0 +1,11 @@
+:root {
+  --text: orange;
+  --bg: black;
+}
+
+body {
+  color: var(--text);
+  background: var(--bg);
+}
+
+
