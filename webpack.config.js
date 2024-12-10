@@ -33,7 +33,7 @@ module.exports = {
         new ESLintPlugin({
             // Optional: Specify your ESLint configuration file or other options
             extensions: ['js'], // Specify file extensions to lint
-            overrideConfigFile: path.resolve(__dirname, 'eslint.config.js'), // Explicitly specify the ESLint config file
+            overrideConfigFile: path.resolve(__dirname, '.eslintrc.js'), // Explicitly specify the ESLint config file
         }),
 
         new MiniCssExtractPlugin({
